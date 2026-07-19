@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import 'remixicon/fonts/remixicon.css';
+
+html{
+
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+
+
+:root{
+  --button: #6366F1
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bottom{
+    background: linear-gradient(transparent,black);
+}
