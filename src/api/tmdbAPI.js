@@ -9,14 +9,14 @@ const apiKey = import.meta.env.VITE_TMDB_KEY
 // /movie/now_playing
 
 
-export async function search_Movies(){
+export async function search_Movies(query){
     const res = await axios.get('https://api.themoviedb.org/3/search/movie',{
         params:{
-            query: "Jack Reacher",
+            query: query,
             api_key: apiKey,
         }
     })
-    console.log(res.data.results);
+    return (res.data.results);
 }
 
 // search_Movies()

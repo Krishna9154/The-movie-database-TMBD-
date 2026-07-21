@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const SearchItem = () => {
+const SearchItem = ({data}) => {
 
     const Popular_movies = ['1', '2', '2', '3', '1', '2', '2', '3', '4']
 
+    useEffect(()=>{
+        console.log(data);
+    },[data])
+
+  
 
 
     return (
@@ -18,21 +23,21 @@ const SearchItem = () => {
             </div>
 
             <div  className=' h-140  bg-white rounded-xl py-3 px-5 flex flex-col gap-3 overflow-auto  '>
-            {Popular_movies.map((item , idx) => {
+            {data.map((item , idx) => {
                 return (
                     
                         <Link to='/detail' key={idx} className='bg-pink-500 rounded-xl flex  p-4'>
                             <img
-                                src="https://www.equinetmedia.com/hubfs/How-to-find-b2b-blog-images.png"
-                                className='h-30  rounded-xl mr-10 ' />
+                                src={`https://image.tmdb.org/t/p/w500${item.poster_Link}`}
+                                className=' h-30  rounded-xl mr-10 ' />
                             <div className='mr-auto'>
-                                <h1 className='mb-2'>The Shaw Shark Redemption</h1>
+                                <h1 className='mb-2'>{item.title}</h1>
                                 <div>
                                     <h1 className='mb-2'>Drama</h1>
-                                    <h1>1994 . 2h 22m</h1>
+                                    <h1>{item.release_date}</h1>
                                 </div>
                             </div>
-                            <h1>9.3</h1>
+                            <h1>{`⭐${item.rating}`}</h1>
                         </Link>
                 )
             })}

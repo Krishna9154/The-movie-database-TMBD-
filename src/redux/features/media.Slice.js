@@ -3,6 +3,7 @@ import { createSlice, original } from "@reduxjs/toolkit";
 const mediaSlice = createSlice({
     name: 'Movies data',
     initialState: {
+        
         popularResults:[],
         topratedResults:[],
         trendingResults:[],

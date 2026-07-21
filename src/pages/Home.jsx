@@ -7,7 +7,7 @@ import Upcoming from '../components/Upcoming'
 
 const Home = () => {
   return (
-    <div className='bg-gray-900 rounded-2xl overflow-auto hide-scrollbar p-4'>
+    <div className='bg-gray-900 rounded-2xl overflow-auto hide-scrollbar p-4 h-screen'>
     <Nav />
     <Popular />
     <TopRated />
