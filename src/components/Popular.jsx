@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { popular_Movies } from '../api/tmdbAPI'
 import { useDispatch, useSelector } from 'react-redux'
 import { setpopularResults, setLoading , setError } from '../redux/features/media.Slice'
+import Card from './Card'
 
 const Popular = () => {
 
@@ -39,26 +39,13 @@ const Popular = () => {
 
   }, [])
 
-  if(loading) return <h1>Loading...</h1>
+  if(loading) return <div><h1>Loading...</h1></div>
 
-
-
-  return (
-    <div className='py-5'>
-      <h1 className='text-xl font-bold'>Popular Movies</h1>
-      <div className='py-4 flex  gap-4 overflow-x-auto hide-scrollbar '>
-        {popularResults.map((item, key) => {
-          return <Link to={`/detail/${item.id}`}
-           key={key} 
-           className='h-60 w-50  relative shrink-0 '>
-            <img className='h-60 w-60 bg-green-400 rounded-xl ' src={`https://image.tmdb.org/t/p/w500${item.posterLink}`} />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-            <h1 className='absolute bottom-0 p-3 text-xl '>{item.title}</h1>
-          </Link>
-        })}
-      </div>
-    </div>
+  return(
+    <Card data={popularResults} />
   )
+
+
 }
 
 export default Popular

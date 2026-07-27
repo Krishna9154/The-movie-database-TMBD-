@@ -45,7 +45,6 @@ const Search = () => {
   }
 
 
-
 const navigate = useNavigate()
 
 return (

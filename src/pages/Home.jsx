@@ -4,15 +4,21 @@ import Popular from '../components/Popular'
 import TopRated from '../components/TopRated'
 import Trending from '../components/Trending'
 import Upcoming from '../components/Upcoming'
+import Favaraite from './Favaraite'
+import Card from '../components/Card'
 
 const Home = () => {
   return (
-    <div className='bg-gray-900 rounded-2xl overflow-auto hide-scrollbar p-4 h-screen'>
+    <div className='bg-gray-900 rounded-2xl overflow-auto hide-scrollbar p-4 h-screen w-full'>
     <Nav />
     <Popular />
     <TopRated />
     <Trending />
     <Upcoming />
+    
+
+    
+    
     </div>
   )
 }
