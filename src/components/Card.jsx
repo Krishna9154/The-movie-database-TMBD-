@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { setItem } from '../utils/collection'
 
 
 const Card = ({ data }) => {
@@ -12,7 +13,9 @@ const Card = ({ data }) => {
                     return <div 
                         key={key}
                         className='h-60 w-50  relative shrink-0 '>
-                         <h1 className='absolute flex justify-end w-full px-4 py-2 '><i className="ri-poker-hearts-line"></i></h1>
+                         <h1 className='absolute flex justify-end w-full px-4 py-2 '><i onClick={()=>{
+                            setItem(item)
+                         }} className="ri-poker-hearts-line"></i></h1>
                          <Link to={`/detail/${item.id}`}>
                         <img className='h-60 w-60 bg-green-400 rounded-xl ' src={`https://image.tmdb.org/t/p/w500${item.posterLink}`} />
                          </Link>

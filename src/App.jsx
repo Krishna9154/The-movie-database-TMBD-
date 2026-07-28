@@ -2,6 +2,7 @@ import React from 'react'
 import {  search_Movies } from './api/tmdbAPI'
 import { Route, Routes } from 'react-router-dom'
 import { lazy , Suspense } from 'react'
+import SavedCollection from './pages/SavedCollection'
 
 const Home = lazy(()=> import('./pages/Home'))
 const Search = lazy(()=>import('./pages/Search'))
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/detail/:id'element={<MovieDetails />} />
         <Route path='/watchlist'element={<Watchlist />} />
         <Route path='/profile'element={<ProfilePage /> } />
+        <Route path='/collection' element={<SavedCollection />} />
       </Routes>
       </Suspense>
 
